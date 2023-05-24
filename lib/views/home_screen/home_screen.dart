@@ -202,14 +202,45 @@ class HomeScreen extends StatelessWidget {
                       }),
                   //All Product Section
                   GridView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
                       shrinkWrap: true,
+                      itemCount: 6,
                       gridDelegate:
                           const SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2),
+                        crossAxisCount: 2,
+                        mainAxisSpacing: 8,
+                        mainAxisExtent: 300,
+                        crossAxisSpacing: 8,
+                      ),
                       itemBuilder: (context, index) {
-                        return Container(
-                          color: redColor,
-                        );
+                        return Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Image.asset(
+                              imgP5,
+                              width: 200,
+                              height: 200,
+                              fit: BoxFit.cover,
+                            ),
+                            const Spacer(),
+                            "Laptop 8Gb/64Gb".text.make(),
+                            10.heightBox,
+                            "\$600"
+                                .text
+                                .fontFamily(bold)
+                                .color(redColor)
+                                .size(16)
+                                .make(),
+                          ],
+                        )
+                            .box
+                            .white
+                            .roundedSM
+                            .padding(const EdgeInsets.all(12))
+                            .margin(const EdgeInsets.symmetric(
+                              horizontal: 4,
+                            ))
+                            .make();
                       })
                 ],
               )
