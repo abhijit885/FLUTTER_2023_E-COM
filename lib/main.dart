@@ -16,7 +16,10 @@ class MyApp extends StatelessWidget {
       title: 'E-Mart',
       theme: ThemeData(
           scaffoldBackgroundColor: Colors.transparent,
-          appBarTheme: const AppBarTheme(backgroundColor: Colors.transparent),
+          appBarTheme: const AppBarTheme(
+              //to set appbar icon color
+              iconTheme: IconThemeData(color: darkFontGrey),
+              backgroundColor: Colors.transparent),
           fontFamily: regular),
       home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
