@@ -179,7 +179,7 @@ class ItemDetails extends StatelessWidget {
                           .text
                           .size(25)
                           .color(darkFontGrey)
-                          .fontFamily(semibold)
+                          .fontFamily(bold)
                           .make(),
                       10.heightBox,
                       "descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription"
@@ -188,6 +188,62 @@ class ItemDetails extends StatelessWidget {
                           .color(darkFontGrey)
                           .fontFamily(semibold)
                           .make(),
+                      10.heightBox,
+                      ListView(
+                        shrinkWrap: true,
+                        children: List.generate(
+                          itemDetailsButtonList.length,
+                          (index) => ListTile(
+                            title: itemDetailsButtonList[index]
+                                .text
+                                .fontFamily(semibold)
+                                .color(darkFontGrey)
+                                .make(),
+                            trailing: const Icon(Icons.arrow_forward),
+                          ),
+                        ),
+                      ),
+                      10.heightBox,
+                      //Product May Also Like...
+                      productMayAlsoLike.text
+                          .align(TextAlign.start)
+                          .fontFamily(bold)
+                          .size(25)
+                          .make(),
+                      10.heightBox,
+                      SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          child: Row(
+                              children: List.generate(
+                            4,
+                            (index) => Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Image.asset(
+                                  imgP1,
+                                  width: 150,
+                                  fit: BoxFit.cover,
+                                ),
+                                10.heightBox,
+                                "Laptop 8Gb/64Gb".text.make(),
+                                10.heightBox,
+                                "\$600"
+                                    .text
+                                    .fontFamily(bold)
+                                    .color(redColor)
+                                    .size(16)
+                                    .make(),
+                              ],
+                            )
+                                .box
+                                .white
+                                .roundedSM
+                                .padding(const EdgeInsets.all(8))
+                                .margin(const EdgeInsets.symmetric(
+                                  horizontal: 4,
+                                ))
+                                .make(),
+                          ))),
                     ],
                   ),
                 ],

@@ -44,3 +44,14 @@ const womanClothing = "Woman Clothing",
     jewelers = "jewelers",
     callPhone = "callPhone",
     furniture = "furniture";
+
+//Item details string
+const video = "video",
+    reviews = "reviews",
+    sellerPolicy = "sellerPolicy",
+    returnPolicy = "returnPolicy",
+    supportPolicy = "supportPolicy";
+const productMayAlsoLike = "Product May Also Like...";
+//profile strings
+
+const wishlist = "My wishlist", order = "My Orders", messages = "Messages";

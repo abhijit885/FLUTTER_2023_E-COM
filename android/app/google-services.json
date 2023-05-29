@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "915924311433",
+    "project_id": "emartflutter2023",
+    "storage_bucket": "emartflutter2023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:915924311433:android:62b7aec5a782b83ba81558",
+        "android_client_info": {
+          "package_name": "com.example.emart_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2woXepfP7DI3dbVB2lvtsyC5357Y6eos"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

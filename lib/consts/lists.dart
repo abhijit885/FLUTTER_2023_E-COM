@@ -29,3 +29,16 @@ const categoryImages = [
   imgFc8,
   imgFc9
 ];
+const itemDetailsButtonList = [
+  video,
+  reviews,
+  sellerPolicy,
+  returnPolicy,
+  supportPolicy
+];
+const profileButtonList = [order, wishlist, messages];
+const profileButtonIcon = [
+  icOrder,
+  icMessages,
+  icMessages,
+];
