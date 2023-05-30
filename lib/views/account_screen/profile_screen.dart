@@ -1,14 +1,19 @@
 import 'package:emart_app/consts/consts.dart';
 import 'package:emart_app/consts/lists.dart';
+import 'package:emart_app/controllers/auth_controller.dart';
 import 'package:emart_app/views/account_screen/components/details_card.dart';
+import 'package:emart_app/views/auth_screen/login_screen.dart';
+// ignore: unnecessary_import
 import 'package:flutter/material.dart';
 import 'package:emart_app/widgets_common/bg_wdget.dart';
+import 'package:get/get.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
-
   @override
   Widget build(BuildContext context) {
+    var controller = Get.put(AuthContoller());
+
     return bgWidget(
         child: Scaffold(
       //   body: safeArea(
@@ -46,7 +51,11 @@ class ProfileScreen extends StatelessWidget {
                 OutlinedButton(
                     style: OutlinedButton.styleFrom(
                         side: const BorderSide(color: whiteColor)),
-                    onPressed: () {},
+                    onPressed: () async {
+                      await Get.put(
+                          AuthContoller().signoutMethod(context: context));
+                      Get.offAll(() => const LoginScreen());
+                    },
                     child: "Logout".text.fontFamily(bold).white.make())
               ],
             ),

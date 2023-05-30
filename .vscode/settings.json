@@ -6,6 +6,7 @@
         "firestore",
         "Getx",
         "searchanything",
+        "signout",
         "Swiper"
     ]
 }

@@ -1,4 +1,6 @@
 import 'package:emart_app/consts/consts.dart';
+import 'package:emart_app/controllers/auth_controller.dart';
+import 'package:emart_app/views/home_screen/home.dart';
 import 'package:emart_app/widgets_common/applogo_widget.dart';
 import 'package:emart_app/widgets_common/bg_wdget.dart';
 import 'package:emart_app/widgets_common/custom_textfield.dart';
@@ -14,6 +16,12 @@ class signupScreen extends StatefulWidget {
 
 class _signupScreenState extends State<signupScreen> {
   bool? isCheck = false;
+  var controller = Get.put(AuthContoller());
+//Text controller
+  var nameController = TextEditingController();
+  var emailController = TextEditingController();
+  var passwordController = TextEditingController();
+  var passwordRetypeController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return bgWidget(
@@ -29,13 +37,29 @@ class _signupScreenState extends State<signupScreen> {
             10.heightBox,
             Column(
               children: [
-                customTextfield(hint: name, title: name),
+                customTextfield(
+                    hint: name,
+                    title: name,
+                    controller: nameController,
+                    isPass: false),
                 5.heightBox,
-                customTextfield(hint: emailHint, title: email),
+                customTextfield(
+                    hint: emailHint,
+                    title: email,
+                    controller: emailController,
+                    isPass: false),
                 5.heightBox,
-                customTextfield(hint: passwordHint, title: password),
+                customTextfield(
+                    hint: passwordHint,
+                    title: password,
+                    controller: passwordController,
+                    isPass: true),
                 5.heightBox,
-                customTextfield(hint: passwordHint, title: reTypePassword),
+                customTextfield(
+                    hint: passwordHint,
+                    title: reTypePassword,
+                    controller: passwordRetypeController,
+                    isPass: true),
                 Row(
                   children: [
                     Checkbox(
@@ -83,13 +107,34 @@ class _signupScreenState extends State<signupScreen> {
                   ],
                 ),
                 ourButton(
-                        //color: isCheck == true ? redColor : lightGrey,
-                        title: signup,
-                        textColor: whiteColor,
-                        onPress: () {})
-                    .box
-                    .width(context.screenWidth - 40)
-                    .make(),
+                    color: isCheck == true ? redColor : textfieldGrey,
+                    title: signup,
+                    textColor: whiteColor,
+                    onPress: () async {
+                      if (isCheck != false) {
+                        try {
+                          await controller
+                              .signupMethod(
+                            context: context,
+                            email: emailController.text,
+                            password: passwordController.text,
+                          )
+                              .then((value) {
+                            return controller.storeUserData(
+                              //email :emailController.text,
+                              //password:passwordController.text,
+                              name: nameController.text,
+                            );
+                          }).then((value) {
+                            VxToast.show(context, msg: loggedin);
+                            Get.offAll(() => const Home());
+                          });
+                        } catch (e) {
+                          auth.signOut();
+                          VxToast.show(context, msg: loggedout);
+                        }
+                      }
+                    }).box.width(context.screenWidth - 40).make(),
                 15.heightBox,
                 //wraps in to a gesture detector of velocity X
                 // RichText(
