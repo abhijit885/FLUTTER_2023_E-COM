@@ -10,6 +10,7 @@ class ItemDetails extends StatelessWidget {
     return Scaffold(
       backgroundColor: lightGrey,
       appBar: AppBar(
+        elevation: 0.0,
         title: title!.text.fontFamily(bold).color(darkFontGrey).make(),
         actions: [
           IconButton(
@@ -27,7 +28,7 @@ class ItemDetails extends StatelessWidget {
         children: [
           Expanded(
               child: Padding(
-            padding: EdgeInsets.all(8),
+            padding: const EdgeInsets.all(8),
             child: SingleChildScrollView(
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -131,7 +132,7 @@ class ItemDetails extends StatelessWidget {
                           SizedBox(
                             width: 200,
                             child:
-                                "Quentity: ".text.color(textfieldGrey).make(),
+                                "Quantity: ".text.color(textfieldGrey).make(),
                           ),
                           Row(children: [
                             IconButton(
@@ -182,7 +183,7 @@ class ItemDetails extends StatelessWidget {
                           .fontFamily(bold)
                           .make(),
                       10.heightBox,
-                      "descriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription"
+                      "description"
                           .text
                           .size(15)
                           .color(darkFontGrey)
