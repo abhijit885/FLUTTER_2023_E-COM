@@ -6,8 +6,8 @@ import 'package:image_picker/image_picker.dart';
 class ProfileController extends GetxController {
   var profileImagePath = "".obs;
   //edit text fields
-  var nameController = TextEditingController();
-  var passwordController = TextEditingController();
+  //var nameController = TextEditingController();
+  //var passwordController = TextEditingController();
   changeImage(context) async {
     try {
       final img = await ImagePicker()

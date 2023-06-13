@@ -9,9 +9,9 @@ Widget detailsCard({
   return Column(
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
-      count!.text.fontFamily(semibold).color(darkFontGrey).size(18).make(),
+      "count!".text.fontFamily(semibold).color(darkFontGrey).size(18).make(),
       2.heightBox,
-      title!.text.make(),
+      "title!".text.make(),
     ],
   )
       .box

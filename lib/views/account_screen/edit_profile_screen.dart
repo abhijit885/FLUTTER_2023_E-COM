@@ -13,8 +13,8 @@ class EditProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var controller = Get.find<ProfileController>();
-    controller.nameController.text = data['name'];
-    controller.passwordController.text = data['password'];
+    // controller.nameController.text = data['name'];
+    // controller.passwordController.text = data['password'];
     return bgWidget(
         child: Scaffold(
       appBar: AppBar(
@@ -49,13 +49,13 @@ class EditProfileScreen extends StatelessWidget {
                       .red500
                       .make()),
               customTextfield(
-                controller: controller.nameController,
+                // controller: controller.nameController,
                 hint: nameHint,
                 title: name,
                 isPass: false,
               ),
               customTextfield(
-                controller: controller.passwordController,
+                //  controller: controller.passwordController,
                 hint: password,
                 title: password,
                 isPass: true,

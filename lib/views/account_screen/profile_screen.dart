@@ -31,8 +31,8 @@ class ProfileScreen extends StatelessWidget {
               ),
             );
           } else {
-            var data = snapshot.data!.docs[0];
-            //print(data);
+            //  var data = snapshot.data!.docs[0];
+            // print('Response body: ${data}');
             return Column(
               children: [
                 20.heightBox,
@@ -45,7 +45,7 @@ class ProfileScreen extends StatelessWidget {
                           color: whiteColor,
                         ))).onTap(() {
                   Get.to(() => EditProfileScreen(
-                        data: data,
+                      //  data: data,
                       ));
                 }),
                 Padding(
@@ -67,18 +67,18 @@ class ProfileScreen extends StatelessWidget {
                           child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          "${data["name"]}"
-                              .text
-                              .fontFamily(bold)
-                              .white
-                              .size(20)
-                              .make(),
+                          // "${data["name"]}"
+                          //     .text
+                          //     .fontFamily(bold)
+                          //     .white
+                          //     .size(20)
+                          //     .make(),
                           1.heightBox,
-                          "${data["email"]}"
-                              .text
-                              .fontFamily(semibold)
-                              .white
-                              .make(),
+                          // "${data["email"]}"
+                          //     .text
+                          //     .fontFamily(semibold)
+                          //     .white
+                          //     .make(),
                         ],
                       )),
                       OutlinedButton(
@@ -99,19 +99,19 @@ class ProfileScreen extends StatelessWidget {
                   //crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     detailsCard(
-                      count: data['cart_count'],
+                      //  count: data['cart_count'],
                       height: context.screenHeight / 11,
                       width: context.screenWidth / 3.4,
                       title: "in your cart",
                     ),
                     detailsCard(
-                      count: data['wishlist_count'],
+                      //  count: data['wishlist_count'],
                       height: context.screenHeight / 11,
                       width: context.screenWidth / 3.4,
                       title: "in your wishlist",
                     ),
                     detailsCard(
-                      count: data['order_count'],
+                      //  count: data['order_count'],
                       height: context.screenHeight / 11,
                       width: context.screenWidth / 3.4,
                       title: "in your orders",
